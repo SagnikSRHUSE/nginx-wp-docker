@@ -7,3 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Change NGINX user to www-data
 RUN sed -i "s/user\ \ nginx/user\ \ www-data/g" /etc/nginx/nginx.conf
+
+# Install extra packages
+
+RUN apt-get install -y nginx-extras
