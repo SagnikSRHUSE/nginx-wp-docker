@@ -7,7 +7,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install NGINX packages
 
-RUN apt-get update -y \
+RUN apt-get update \
+    && apt-get dist-upgrade -y \
+    && apt-get autoremove -y \
+    && apt-get autoclean \
     && apt-get install -y nginx \
     && apt-get install -y libnginx-mod-http-fancyindex \
     && apt-get install -y libnginx-mod-http-headers-more-filter
