@@ -10,6 +10,6 @@ RUN sed -i "s/user\ \ nginx/user\ \ www-data/g" /etc/nginx/nginx.conf
 
 # Install extra packages
 
-RUN apt-get update -y
+RUN apt-get update -y \
     && apt-get install -y libnginx-mod-http-fancyindex \
     && apt-get install -y libnginx-mod-http-headers-more-filter
